@@ -37,10 +37,12 @@ module.exports = {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
         }, {
-            test: /\.woof|.woof2|.ttf|.eot|.svg*.*$/,
+            test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
             loader: 'file'
         }]
     }
 }
 
 // test: /.[x]?$/ = RECONHECE TANTO O .JS QUANTO O .JSX
+
+// assim tava dando erro: test: /\.woof|.woof2|.ttf|.eot|.svg*.*$/,
